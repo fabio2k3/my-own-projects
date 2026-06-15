@@ -1,5 +1,6 @@
 import random
-
+import matplotlib.pyplot as plt
+import numpy as np
 X = []
 Y = []
 
@@ -45,3 +46,16 @@ def prediccionFuncion(x, beta1, beta0):
     return x*beta1 + beta0
 
 print(f"Función resultante: y = {beta1}*x + {beta0}")
+
+x_line = np.linspace(min(X), max(X), 100)
+y_line = beta1 * x_line + beta0
+
+plt.plot(X, Y, 'o')
+plt.xlabel("Valores X")
+plt.ylabel("Valores Y")
+plt.title("Mis Datos")
+plt.grid(True)
+
+plt.plot(x_line, y_line, 'r-', linewidth = 2, label = f"Recta y = {beta1}*x + {beta0}"  )
+
+plt.show()
