@@ -1,0 +1,20 @@
+print("Tienes experiencia en el sector laboral?")
+experiencia = input("Responde Si o No: ").strip().capitalize()
+print("Tienes titulo que te avale?")
+titulo = input("Responde Si o No: ").strip().capitalize()
+
+w_expereciencia = 0.8
+w_titulo = 0.7
+
+value_experiencia = 1 if experiencia == "Si" else 0
+value_titulo = 1 if titulo == "Si" else 0
+
+bias = -1.2
+
+z = (w_expereciencia * value_experiencia) + (w_titulo * value_titulo) + bias
+
+if z > 0:
+    print ("Tienes el Trabajo")
+else:
+    print("Lo sentimos no esta apto para este trabajo")
+
